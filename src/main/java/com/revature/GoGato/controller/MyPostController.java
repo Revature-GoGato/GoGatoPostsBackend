@@ -21,11 +21,7 @@ public class MyPostController {
 
     //update record
     @PutMapping
-    public void updatePost(@RequestBody MyPost temp){
-
-        //MyPost mypost = myPostService.findPostById(temp.getId()); todo: dont need?
-        myPostService.updatePost(temp);
-    }
+    public void updatePost(@RequestBody MyPost temp){ myPostService.updatePost(temp); }
 
     //delete record
     @DeleteMapping

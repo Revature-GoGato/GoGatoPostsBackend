@@ -20,4 +20,7 @@ public class MyPost {
 
     public MyPost(){}
 
+    public int getId() {
+        return id;
+    }
 }
