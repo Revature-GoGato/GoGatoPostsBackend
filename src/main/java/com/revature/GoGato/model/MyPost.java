@@ -15,12 +15,15 @@ public class MyPost {
     private int id;
     private String contents;
     private int likes;
+    private String post_time;
     private int userid;
-    private int parent_post;
+    private int parentid;
+    private int childid;
 
     public MyPost(){}
 
     public int getId() {
         return id;
     }
+
 }
