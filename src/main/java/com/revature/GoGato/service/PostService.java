@@ -18,5 +18,9 @@ public class PostService {
         return postRepository.findAll();
     }
 
+    public List<Post> getByUserId (int userId){
+
+        return postRepository.findByUserId(userId);
+    }
 
 }
