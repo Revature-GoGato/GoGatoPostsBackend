@@ -3,6 +3,8 @@ package com.revature.GoGato.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity(name = "posts")
 
@@ -15,10 +17,9 @@ public class MyPost {
     private int id;
     private String contents;
     private int likes;
-    private String post_time;
+    private Timestamp post_time;
     private int userid;
     private int parentid;
-    private int childid;
 
     public MyPost(){}
 
