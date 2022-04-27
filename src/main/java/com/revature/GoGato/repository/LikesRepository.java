@@ -8,5 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface LikesRepository extends JpaRepository<Likes, Integer> {
-    Optional<Likes> findAllLikesByuserid(Integer userid);//created so if an optional get method is acted the repository knows to get by user id instead of just id
+    //created so if an optional get method is acted the repository knows to get by user id instead of just id
+    Optional<Likes> findAllLikesByuserid(Integer userid);
 }

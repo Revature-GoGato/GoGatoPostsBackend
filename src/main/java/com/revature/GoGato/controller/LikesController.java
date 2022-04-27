@@ -10,7 +10,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/likes")
-@CrossOrigin(origins = "*", allowedHeaders = "*") // using this so that I can communicate with my other computer to send requests into the backend
+// using this so that I can communicate with my other computer to send requests into the backend
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class LikesController {
     private LikesService likesService;
 
@@ -19,30 +20,36 @@ public class LikesController {
     }
 
     @GetMapping
-    @ResponseStatus(HttpStatus.FOUND) // for future use if we end up adding in the liked posts onto the user profile the mapping is already set up
+    // for future use if we end up adding in the liked posts onto the user profile the mapping is already set up
+    @ResponseStatus(HttpStatus.FOUND)
     public List<Likes> findAllLikes() {
         return likesService.findAllLikes();
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED) // creates relationship with user and posts
+    // creates relationship with user and posts
+    @ResponseStatus(HttpStatus.CREATED)
     public Likes createLikes(@RequestBody Likes likes) {
         return likesService.createLikes(likes);
     }
-
-    @GetMapping("/{id}") // gets likes by user id so that on front end when pulling up posts it will check if the user has a relationship with the post already
+    // gets likes by user id so that on front end when pulling up posts it will check if the user has a relationship with the post already
+    @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.FOUND)
     public Optional<Likes> getAllLikesByUserId(@PathVariable Integer userid) {
         return likesService.getLikesByUserId(userid);
     }
 
     @PutMapping("/{id}")
-    Optional<Likes> replacePost(@RequestBody Likes newLikes, @PathVariable Integer id) { // creates an optional request where if an id is added in a put request
+        // creates an optional request where if an id is added in a put request
         //then it will put the new like_status where likes id is found
+    Optional<Likes> replacePost(@RequestBody Likes newLikes, @PathVariable Integer id) {
+
         return likesService.getAllLikesByLikesId(id)
-                .map(like_state -> { // creates a map that updates only the like_state in the object
+                // creates a map that updates only the like_state in the object
+                .map(like_state -> {
                     like_state.setLike_state(newLikes.getLike_state());
-                    return likesService.updateLikes(like_state); // actually updates the likes
+                    // actually updates the likes
+                    return likesService.updateLikes(like_state);
                 });
     }
 }
