@@ -22,5 +22,9 @@ public class PostService {
 
         return postRepository.findByUserId(userId);
     }
+    public List<Post> getByParent (int parent){
+
+        return postRepository.findByParent(parent);
+    }
 
 }

@@ -22,6 +22,9 @@ public class PostController {
     @GetMapping("/userid/{userid}")
     public List<Post> getAllByUserId(@PathVariable int userid){return postService.getByUserId(userid);}
 
+    @GetMapping("/parent/{parent}")
+    public List<Post> getAllByParent(@PathVariable int parent){return postService.getByParent(parent);}
+
 
 
 }
