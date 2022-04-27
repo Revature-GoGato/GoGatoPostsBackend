@@ -7,7 +7,8 @@ import javax.persistence.*;
 @Entity(name = "likes")
 @Data
 public class Likes {
-    @Id@GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
     private int userid;
