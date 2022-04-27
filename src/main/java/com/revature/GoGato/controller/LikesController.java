@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/likes")
@@ -21,4 +22,8 @@ public class LikesController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Likes createLikes(@RequestBody Likes likes){return likesService.createLikes(likes);}
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.FOUND)
+    public Optional<Likes> getAllLikesByUserId(@PathVariable Integer userid){return likesService.getLikesByUserId(userid);}
 }
