@@ -1,6 +1,6 @@
 package com.revature.GoGato.controller;
 
-import com.revature.GoGato.model.Post;
+import com.revature.GoGato.model.MyPost;
 import com.revature.GoGato.service.CreatePostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +15,8 @@ public class CreatePostController {
 
 
     @PostMapping("/create")
-    public void createPostService(@RequestBody Post post){
-        createPostService.createPost(post);
+    public void createPostService(@RequestBody MyPost myPost){
+        createPostService.createPost(myPost);
     }
 
 }
