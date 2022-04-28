@@ -11,7 +11,7 @@ spring:
     password: sa
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-  jackson:
-
+    hibernate:
+      ddl-auto: create-drop
 server:
   port: 8080
