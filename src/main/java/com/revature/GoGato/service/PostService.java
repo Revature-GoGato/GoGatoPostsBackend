@@ -18,13 +18,13 @@ public class PostService {
         return postRepository.findAll();
     }
 
-    public List<MyPost> getByUserId (int userId){
+    public List<MyPost> getByUserId (int userid){
 
-        return postRepository.findByUserId(userId);
+        return postRepository.findByUserid(userid);
     }
     public List<MyPost> getByParentId (int parentid){
 
-        return postRepository.findByParentId(parentid);
+        return postRepository.findByParentid(parentid);
     }
 
 }

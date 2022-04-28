@@ -10,8 +10,8 @@ import java.util.List;
 public interface PostRepository extends JpaRepository<MyPost, Integer> {
 
 
-    List<MyPost> findByUserId(int userId);
+    List<MyPost> findByUserid(int userid);
 
-    List<MyPost> findByParentId(int parentid);
+    List<MyPost> findByParentid(int parentid);
 
 }
