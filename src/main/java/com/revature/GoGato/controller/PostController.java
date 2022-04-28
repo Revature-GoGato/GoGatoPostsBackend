@@ -1,6 +1,6 @@
 package com.revature.GoGato.controller;
 
-import com.revature.GoGato.model.Post;
+import com.revature.GoGato.model.MyPost;
 import com.revature.GoGato.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,13 +17,13 @@ public class PostController {
     PostService postService;
 
     @GetMapping
-    public List<Post> getAll(){return postService.getAll();}
+    public List<MyPost> getAll(){return postService.getAll();}
 
     @GetMapping("/userid/{userid}")
-    public List<Post> getAllByUserId(@PathVariable int userid){return postService.getByUserId(userid);}
+    public List<MyPost> getAllByUserId(@PathVariable int userid){return postService.getByUserId(userid);}
 
-    @GetMapping("/parent/{parent}")
-    public List<Post> getAllByParent(@PathVariable int parent){return postService.getByParent(parent);}
+    @GetMapping("/parent/{parentid}")
+    public List<MyPost> getAllByParentId(@PathVariable int parentid){return postService.getByParentId(parentid);}
 
 
 
