@@ -48,14 +48,23 @@ BEGIN
 END;
 $$;
 
+CREATE OR REPLACE FUNCTION insert_modified_column() 
+RETURNS TRIGGER 
+language 'plpgsql'
+AS $$
+BEGIN
+    NEW.post_time := now();
+    RETURN NEW; 
+END;
+$$;
+
 CREATE TRIGGER update_customer_modtime BEFORE UPDATE ON project3."posts" FOR EACH ROW EXECUTE PROCEDURE  update_modified_column();
 
-
-
+CREATE TRIGGER insert_customer_modtime BEFORE INSERT ON project3."posts" FOR EACH ROW EXECUTE PROCEDURE  insert_modified_column();
 
 insert into project3."users" ("username", "password", "first_name", "last_name", "email") values ('asdf', 'asdf', 'asdf', 'asdf', 'asdf@asdf.com');
 
-insert into project3."posts" ("contents", "userid") values ('second', 1);
+insert into project3."posts" ("contents", "userid") values ('third', 1);
 
 
 
