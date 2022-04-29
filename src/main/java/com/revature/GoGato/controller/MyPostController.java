@@ -14,10 +14,21 @@ public class MyPostController {
     MyPostService myPostService;
 
     //get
+    @GetMapping
+    public List<MyPost> getAll(){return myPostService.getAll();}
 
-    //get by id
+    @GetMapping("/userid/{userid}")
+    public List<MyPost> getAllByUserId(@PathVariable int userid){return myPostService.getByUserId(userid);}
+
+    @GetMapping("/parent/{parentid}")
+    public List<MyPost> getAllByParentId(@PathVariable int parentid){return myPostService.getByParentId(parentid);}
+
 
     //post
+    @PostMapping("/create")
+    public void createPostService(@RequestBody MyPost post){
+        myPostService.createPost(post);
+    }
 
     //update record
     @PutMapping

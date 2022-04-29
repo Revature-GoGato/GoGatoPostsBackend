@@ -16,16 +16,25 @@ public class MyPostService {
     @Autowired
     MyPostRepository myPostRepository;
 
-    public List<MyPost> getAllPosts(){
+    public List<MyPost> getAll(){
+
         return myPostRepository.findAll();
     }
 
-    public MyPost findPostById(Integer id){
+    public List<MyPost> getByUserId (int userid){
 
-        return myPostRepository.findById(id).orElse(new MyPost());
+        return myPostRepository.findByUserid(userid);
+    }
+    public List<MyPost> getByParentId (int parentid){
+
+        return myPostRepository.findByParentid(parentid);
     }
 
     //post
+    public MyPost createPost(MyPost post) {
+        return myPostRepository.save(post);
+    }
+
 
     public void updatePost(MyPost mypost){ myPostRepository.save(mypost); }
 
