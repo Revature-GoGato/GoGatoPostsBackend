@@ -26,17 +26,21 @@ public class LikesController {
         return likesService.findAllLikes();
     }
 
-    @PostMapping
+
     // creates relationship with user and posts
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Likes createLikes(@RequestBody Likes likes) {
         return likesService.createLikes(likes);
     }
+
+
     // gets likes by user id so that on front end when pulling up posts it will check if the user has a relationship with the post already
-    @GetMapping("/{id}")
-    @ResponseStatus(HttpStatus.FOUND)
-    public Optional<Likes> getAllLikesByUserId(@PathVariable Integer userid) {
-        return likesService.getLikesByUserId(userid);
+    @GetMapping("/{userid}")
+    @ResponseBody
+    public  List<Likes> getAllLikesByUserId(@PathVariable Integer userid) {
+        return likesService.findAllLikesByUserId(userid);
+
     }
 
     @PutMapping("/{id}")
@@ -52,4 +56,6 @@ public class LikesController {
                     return likesService.updateLikes(like_state);
                 });
     }
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Integer id){ likesService.deleteById(id); }
 }

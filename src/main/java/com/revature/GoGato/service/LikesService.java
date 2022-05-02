@@ -23,10 +23,13 @@ public class LikesService {
 
     // this gets all likes by the user id
     // currently for future implementations if we get to adding likes on the user profile the logic is there
-    public Optional<Likes> getLikesByUserId(Integer userid){return likesRepository.findAllLikesByuserid(userid);}
+    public List<Likes> findAllLikesByUserId(Integer userid){return likesRepository.findAllLikesByuserid(userid);}
 
 // this sends the request into the repository interface
     //So that I can get likes by the like id and update the like state by like id
     public Optional<Likes> getAllLikesByLikesId(Integer id){return likesRepository.findById(id);}
 
+
+    public void deleteById(Integer id) {likesRepository.deleteById(id);
+    }
 }
