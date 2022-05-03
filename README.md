@@ -4,9 +4,7 @@
 
 ### Summary:
 
-GoGato is a social media application that allows users to create a profile and posts. A post is created by taking user input and rendering it on the user's screen for viewing and interaction, simultaneously storing the content in a PostgreSQL database that is hosted on AWS.
-
-The database tables are created via Spring JPA with Hibernate, and the API is documented using Swagger and JavaDocs.
+GoGato is a social media application that allows users to create a profile and posts. A post is created by taking user input and rendering it on the user's screen for viewing and interaction, simultaneously storing the content in a PostgreSQL database that is hosted on AWS. The database tables are created via Spring JPA with Hibernate, and the API is documented using JavaDocs.
 
 ### Features:
 
