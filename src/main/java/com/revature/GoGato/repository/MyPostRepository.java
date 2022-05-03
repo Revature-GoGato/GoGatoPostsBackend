@@ -6,6 +6,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * This interface extends the JpaRepository in order to implement CRUD methods.
+ */
+
 @Repository
 public interface MyPostRepository extends JpaRepository<MyPost, Integer> {
     List<MyPost> findByUserid(int userid);

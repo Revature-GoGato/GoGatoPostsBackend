@@ -8,6 +8,11 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * This class contains the configuration for the Cross-Origin Resource Sharing (CORS) filter.
+ *
+ */
+
 @Component
 public class CorsFilter implements Filter {
 
@@ -18,6 +23,15 @@ public class CorsFilter implements Filter {
 
     }
 
+    /**
+     * Method with detailed params for CORS filtering
+     * @param servletRequest
+     * @param servletResponse
+     * @param filterChain
+     * @throws ServletException
+     * @throws IOException
+     * @author
+     */
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws ServletException, IOException {
         log.info("Adding Access Control Response Headers");
