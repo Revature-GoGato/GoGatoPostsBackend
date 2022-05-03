@@ -30,7 +30,7 @@ public class MyPostService {
 
     /**
      * Method to retrieve all posts from database filtered by userid
-     * @param userid
+     * @param userid The ID of the user
      * @return list of posts
      * @author Jacob
      */
@@ -42,7 +42,7 @@ public class MyPostService {
 
     /**
      * Method to retrieve all posts from database filtered by parentid, which includes existing comments
-     * @param parentid
+     * @param parentid The ID of the parent Post
      * @return list of posts
      * @author Jacob
      */
@@ -53,8 +53,8 @@ public class MyPostService {
 
     /**
      * Method to create a post
-     * @param post
-     * @return
+     * @param post The Post object
+     * @return saved post
      * @author Nakisha
      */
     public MyPost createPost(MyPost post) {
@@ -63,7 +63,7 @@ public class MyPostService {
 
     /**
      * Method to update a post
-     * @param mypost
+     * @param mypost The Post object
      * @author Michael
      */
     public void updatePost(MyPost mypost){ myPostRepository.save(mypost); }
@@ -71,7 +71,7 @@ public class MyPostService {
 
     /**
      * Method to delete a post
-     * @param mypost
+     * @param mypost The Post object
      * @author Michael
      */
     public void deletePost(MyPost mypost){ myPostRepository.deleteById(mypost.getId()); }

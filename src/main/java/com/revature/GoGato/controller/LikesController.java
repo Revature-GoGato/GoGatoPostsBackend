@@ -11,6 +11,7 @@ import java.util.Optional;
 /**
  * This controller handles requests to create and update a post's likes
  */
+
 @RestController
 @RequestMapping("/likes")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -52,8 +53,6 @@ public class LikesController {
      * @return a single liked post
      * @author Justin
      */
-
-
     @GetMapping("/{userid}")
     @ResponseBody
     public  List<Likes> getAllLikesByUserId(@PathVariable Integer userid) {
@@ -65,12 +64,11 @@ public class LikesController {
     /**
      * creates an optional request where if an id is added in a put request
      * then it will put the new like_status where likes id is found
-     * @param newLikes
-     * @param id
-     * @return
+     * @param newLikes the
+     * @param id The ID of the like
+     * @return updated like
      * @author Justin
      */
-
     @PutMapping("/{id}")
     Optional<Likes> replacePost(@RequestBody Likes newLikes, @PathVariable Integer id) {
 
@@ -85,10 +83,9 @@ public class LikesController {
 
     /**
      * Deletes a like
-     * @param id
+     * @param id The ID of the like
      * @author Justin
      */
-
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Integer id){ likesService.deleteById(id); }
 }

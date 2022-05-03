@@ -25,12 +25,12 @@ public class CorsFilter implements Filter {
 
     /**
      * Method with detailed params for CORS filtering
-     * @param servletRequest
-     * @param servletResponse
-     * @param filterChain
-     * @throws ServletException
-     * @throws IOException
-     * @author
+     * @param servletRequest The body of the outgoing request
+     * @param servletResponse The body of the incoming response
+     * @param filterChain Reflects the order of the filters
+     * @throws ServletException ServletException
+     * @throws IOException IO Exception
+     * @author Michael
      */
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws ServletException, IOException {

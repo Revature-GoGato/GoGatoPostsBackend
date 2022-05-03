@@ -12,7 +12,6 @@ import java.util.Optional;
  *
  */
 
-
 @Service
 public class LikesService {
     //@Autowired would do this too I have just read somewhere this is more secure
@@ -46,7 +45,7 @@ public class LikesService {
 
     /**
      * Method to retrieve all likes by like id for updating like status
-     * @param id
+     * @param id The ID of the like
      * @return *list* of likes by like id
      * @author Justin
      */
@@ -55,7 +54,7 @@ public class LikesService {
 
     /**
      * Method to delete like by id
-     * @param id
+     * @param id The ID of the like
      * @author Justin
      */
     public void deleteById(Integer id) {likesRepository.deleteById(id);

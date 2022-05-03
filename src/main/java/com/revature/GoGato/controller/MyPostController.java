@@ -27,7 +27,7 @@ public class MyPostController {
 
     /**
      * Retrieve all posts created by userid
-     * @param userid
+     * @param userid The ID of the user
      * @return a list of posts
      * @author Jacob
      */
@@ -36,7 +36,7 @@ public class MyPostController {
 
     /**
      * Retrieve all posts with parentid as a foreign key, all comments underneath of posts
-     * @param parentid
+     * @param parentid The ID of the parent post
      * @return a list of comments
      * @author Jacob
      */
@@ -46,7 +46,7 @@ public class MyPostController {
 
     /**
      * Create a post
-     * @param post
+     * @param post The Post object
      * @author Nakisha
      */
     @PostMapping("/create")
@@ -56,7 +56,7 @@ public class MyPostController {
 
     /**
      * Update a post
-     * @param temp
+     * @param temp The Post object
      * @author Michael
      */
     @PutMapping
@@ -64,7 +64,7 @@ public class MyPostController {
 
     /**
      * Delete a post
-     * @param temp
+     * @param temp The Post object
      * @author Michael
      */
     @DeleteMapping
