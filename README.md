@@ -1,28 +1,31 @@
-# GoGatoPostsBackend
-Backend for the Posts of GoGato
+# GoGato
+### API for Posts MSA
+************************************************
+
+### Summary:
+
+A post is created when user input is captured and sent to the backend for storage and retrieval. 
+
+Spring Data JPA used to connect to AWS database via PostgreSQL.
+Here is the link for the Docker image.
 
 
+### Features:
 
-BACK END TASKS (TEAM OF 3-4 PEOPLE)
+Users can:
+ 
+ - Create Posts
+ - Retrieve a Post
+ - Retrieve all Posts
+ - Update Posts
+ - Delete posts
 
-(1) EDIT AND DELETE METHODS
+## API/Route Table 
 
-(1) CREATE METHOD
 
-(2) RETRIEVE
-
-ALL POST (BY ei. USER ID) METHOD  
-CONFIRM USER LOGIN
-
-### TEAM ROLES/TASKS
-JUSTIN - LIKE BUTTON
-
-BRETT - POST COMPONENT/CONTAINER
-
-MICHAEL - EDIT, DELETE POST METHOD
-
-MYLES - CHANGE POST
-
-JACOB, HALIM, ELAINE, NAKISHA - CREATE POST METHOD, RETRIEVE POST METHODS, CREATE POST WEB COMPONENT
-
-WILLIAM - All POST PAGE/COMPONENT
+| Route                  | Description              |
+|------------------------|--------------------------|
+| /post                  |                          |
+| /post/userid/:userid   | Get by userid            |
+| /post/userid/:parentid | Get by parentid          |
+| /post/create           | Create a new post        |
