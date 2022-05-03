@@ -4,21 +4,19 @@
 
 ### Summary:
 
-A post is created when user input is captured and sent to the backend for storage and retrieval. 
+GoGato is a social media application that allows users to create a profile and posts. A post is created by taking user input and rendering it on the user's screen for viewing and interaction, simultaneously storing the content in a PostgreSQL database that is hosted on AWS.
 
-Spring Data JPA used to connect to AWS database via PostgreSQL.
-Here is the link for the Docker image.
-
+The database tables are created via Spring JPA with Hibernate, and the API is documented using Swagger and JavaDocs.
 
 ### Features:
 
 Users can:
  
- - Create Posts
- - Retrieve a Post
- - Retrieve all Posts
- - Update Posts
- - Delete posts
+ - Create a post
+ - Retrieve a post
+ - Retrieve all posts
+ - Update a post
+ - Delete a post
 
 ## API/Route Table 
 
@@ -29,3 +27,9 @@ Users can:
 | /post/userid/:userid   | Get by userid            |
 | /post/userid/:parentid | Get by parentid          |
 | /post/create           | Create a new post        |
+
+
+## Built With:
+ - Java 8
+ - Spring Boot Data/Web/JDBC
+ - Lombok
