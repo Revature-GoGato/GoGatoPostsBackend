@@ -4,6 +4,10 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+/**
+ * This class stores the Likes model
+ */
+
 @Entity(name = "likes")
 @Data
 public class Likes {

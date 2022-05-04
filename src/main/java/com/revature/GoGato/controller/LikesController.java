@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * This controller handles requests to create and update a post's likes
+ */
+
 @RestController
 @RequestMapping("/likes")
-// using this so that I can communicate with my other computer to send requests into the backend
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class LikesController {
     private LikesService likesService;
@@ -19,15 +22,25 @@ public class LikesController {
         this.likesService = likesService;
     }
 
+
+
+    /**
+     * Retrieves a list of all posts that have been liked
+     * @return a list of liked posts
+     * @author Justin
+     */
     @GetMapping
-    // for future use if we end up adding in the liked posts onto the user profile the mapping is already set up
     @ResponseStatus(HttpStatus.FOUND)
     public List<Likes> findAllLikes() {
         return likesService.findAllLikes();
     }
 
 
-    // creates relationship with user and posts
+    /**
+     * Creates like and establishes relationship with user and posts
+     * @return a single liked post
+     * @author Justin
+     */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Likes createLikes(@RequestBody Likes likes) {
@@ -35,7 +48,11 @@ public class LikesController {
     }
 
 
-    // gets likes by user id so that on front end when pulling up posts it will check if the user has a relationship with the post already
+    /**
+     * Retrieve liked post by user id
+     * @return a single liked post
+     * @author Justin
+     */
     @GetMapping("/{userid}")
     @ResponseBody
     public  List<Likes> getAllLikesByUserId(@PathVariable Integer userid) {
@@ -43,9 +60,16 @@ public class LikesController {
 
     }
 
+
+    /**
+     * creates an optional request where if an id is added in a put request
+     * then it will put the new like_status where likes id is found
+     * @param newLikes the
+     * @param id The ID of the like
+     * @return updated like
+     * @author Justin
+     */
     @PutMapping("/{id}")
-        // creates an optional request where if an id is added in a put request
-        //then it will put the new like_status where likes id is found
     Optional<Likes> replacePost(@RequestBody Likes newLikes, @PathVariable Integer id) {
 
         return likesService.getAllLikesByLikesId(id)
@@ -56,6 +80,12 @@ public class LikesController {
                     return likesService.updateLikes(like_state);
                 });
     }
+
+    /**
+     * Deletes a like
+     * @param id The ID of the like
+     * @author Justin
+     */
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Integer id){ likesService.deleteById(id); }
 }

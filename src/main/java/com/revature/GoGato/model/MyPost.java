@@ -6,6 +6,10 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 
+/**
+ * This class stores the Post model
+ */
+
 @Entity(name = "posts")
 
 @Data
